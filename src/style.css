@@ -7,7 +7,7 @@
   height: 640px;
 }
 @font-face {
-  font-family: arcade;
+  font-family: 'arcade';
   src: url(./assets/ka1.ttf);
 }
 @font-face {
@@ -76,7 +76,7 @@ body {
   align-items: center;
 }
 .titles {
-  font-family: arcade;
+  font-family: 'arcade', Arial, Helvetica, sans-serif;
   line-height: 28px;
   font-size: 24px;
   justify-content: center;

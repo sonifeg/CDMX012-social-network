@@ -33,7 +33,7 @@ export const createNewUsers = (username, email, password) => {
   createUserWithEmailAndPassword(auth, email, password) // Crea el usuario
     .then((userCredential) => {
       console.log('User created');
-      alert('User created');
+      // alert('User created');
       onNavigate('/home');
     })
     .catch((error) => {
@@ -42,15 +42,15 @@ export const createNewUsers = (username, email, password) => {
 
       if (errorCode === 'auth/invalid-email') {
         authError.textContent = 'Write a valid mail example@gmail.com';
-        alert('write a valid mail example@gmail.com');
+        // alert('write a valid mail example@gmail.com');
       }
       if (errorCode === 'auth/weak-password') {
         authError.textContent = 'Your Password must have 6 characters at least';
-        alert('Your Password must have 6 characters at least');
+        // alert('Your Password must have 6 characters at least');
       }
       if (errorCode === 'auth/email-already-in-use') {
         authError.textContent = 'This email is in use, try another or logIn';
-        alert('This email is in use, try another or logIn.');
+        // alert('This email is in use, try another or logIn.');
       }
     });
 };
@@ -61,17 +61,20 @@ export const shootIn = (email, password) => {
     .then((userCredential) => {
       // Signed in
       const user = userCredential.user;
-      alert('You are In!');
+      // alert('You are In!');
       onNavigate('/home');
       // ...
     })
     .catch((error) => {
       const errorCode = error.code;
+      const authError = document.getElementById('pError');
       if (errorCode === 'auth/wrong-password') {
-        alert('Wrong password, try again.');
+        authError.textContent = 'Wrong password';
+        // alert('Wrong password, try again.');
       }
       if (errorCode === 'auth/invalid-email') {
-        alert('write a valid email');
+        authError.textContent = 'Write a valid mail example@gmail.com';
+        // alert('write a valid email');
       }
     });
 };
