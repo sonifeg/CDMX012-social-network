@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   /* outline: 1px solid red;*/
+    width: 360px;
+    height: 640px;
+  }
+  @font-face {
+    font-family: 'arcade';
+    src: url(./assets/ka1.ttf);
+  }
+  
+  body {
+    background: linear-gradient(to bottom, #010409, #5b1e87);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    font-family: "Roboto", sans-serif;
+  }
+
+.screenNews{
+    display: grid;
+    width: 100%;
+    height: 100%;
+}
+
+.headerNews{
+display: flex;
+flex-direction: row;
+ position: relative;
+  justify-content: flex-start;
+  width: 100%;
+  height: 83px;
+  background: #632195;
+  border: 1px solid #E587ED;
+  /* box-sizing: border-box; */
+  box-shadow: 0px 4px 8px rgba(229, 135, 237, 0.75);
+}
+
+/* .divContainerHome{
+    position: absolute;
+    justify-content: center;
+    height: 83px;
+} */
+
+.userImg{
+    position: absolute;
+    width: 69px;
+    height: 69px;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+.usernameName{
+    position: absolute;
+    font-family: 'arcade', Arial, Helvetica, sans-serif;
+    line-height: 18px;
+    font-size: 16px;
+    margin-left: 30px;
+    color: #28cef2;
+    text-shadow: 0px 0px 5px #E587ED;
+    height: 50px;
+    padding-top: 8px;
+    width: fit-content;
+    height: fit-content;
+    margin-left: 100px;
+    margin-top: 3px;
+}
+
+.main{
+    /* display: grid; */
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.divContainerPost{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 20% 80%;
+    margin-top: 20px;
+    width: 298px;
+    height: 84px;
+    background: rgba(73, 25, 110, 0.24);
+border: 1px solid #E587ED;
+box-sizing: border-box;
+box-shadow: 0px 0px 8px #E587ED;
+border-radius: 10px;
+}
+
+.activity{
+    font-size: 20px;
+    color: white;
+
+}
+
+#postText{
+    width: 192px;
+    height: 35px;
+    color: #e587ed;
+    background: #3F2959;
+    border-radius: 10px;
+    margin-left: 20px;
+    padding-left: 20px;
+    font-size: 18px;
+    display: flex;
+}
+
+#postText::placeholder {
+    font-size: 15px;
+    color: rgba(243, 243, 243, 0.23);
+  }
+
+#submitPost{
+width: 76px;
+height: 25px;
+font-size: 14px;
+line-height: 16px;
+color: #10EBC1;
+text-shadow: 0px 0px 5px #10EBC1;
+border: 1px solid #10EBC1;
+box-shadow: 0px 0px 5px 1px rgba(16, 235, 193, 0.75);
+border-radius: 10px;
+background-color: transparent;
+}
