@@ -7,6 +7,7 @@ import { welcome } from './components/welcome.js';
 import { register } from './components/register.js';
 import { login } from './components/login.js';
 import { home } from './components/home.js';
+/// import { getPost } from './lib/firebase-posts.js';
 
 // SPA
 const rootDiv = document.getElementById('root');
