@@ -21,16 +21,23 @@ export const savePost = (post) => {
 const renderPost = (data) => {
   const postFeedNews = document.getElementById('postFeed');
   const post = document.createElement('section');
-  post.className = 'sectionContainerPost';
+  post.className = 'sectionContainerPost2';
   const name = document.createElement('p');
-  name.className = 'username';
+  name.className = 'usernameAllPost';
   name.textContent = data.username;
   const photo = document.createElement('img');
   photo.src = data.photo;
+  photo.id = 'photo';
   const postText = document.createElement('p');
-  postText.className = 'postText';
+  postText.className = 'coments';
   postText.textContent = data.post;
-  post.append(name, photo, postText);
+  const likes = document.createElement('img');
+  likes.setAttribute('src', './assets/likes.png');
+  likes.className = 'like';
+  const trash = document.createElement('img');
+  trash.setAttribute('src', './assets/trash.png');
+  trash.className = 'trash';
+  post.append(name, photo, postText, likes, trash);
   postFeedNews.append(post);
   return postFeedNews;
 };

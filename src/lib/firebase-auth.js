@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable import/named */
 /* eslint-disable no-unused-vars */
 /* eslint-disable import/no-cycle */
@@ -7,9 +8,9 @@ import {
   signInWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
-  getRedirectResult,
   signInWithRedirect,
-  FacebookAuthProvider, signOut,
+  getRedirectResult,
+  TwitterAuthProvider, signOut,
 } from './firebase-imports.js';
 import { onNavigate } from '../main.js';
 
@@ -88,17 +89,17 @@ export const googleSignIn = () => {
 };
 
 // Sign up with Facebook
-const providerFacebook = new FacebookAuthProvider();
-export const signUpFacebook = () => {
-  signInWithRedirect(auth, providerFacebook);
+const providerTwitter = new TwitterAuthProvider();
+
+export const facebookLogin = () => {
+  signInWithRedirect(auth, providerTwitter);
   getRedirectResult(auth)
     .then((result) => {
       // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-      const credential = FacebookAuthProvider.credentialFromResult(result);
+      const credential = TwitterAuthProvider.credentialFromResult(result);
       const token = credential.accessToken;
 
       const user = result.user;
-      onNavigate('/home');
     })
     .catch((error) => {
       // Handle Errors here.
@@ -107,7 +108,7 @@ export const signUpFacebook = () => {
       // The email of the user's account used.
       const email = error.email;
       // AuthCredential type that was used.
-      const credential = FacebookAuthProvider.credentialFromError(error);
+      const credential = TwitterAuthProvider.credentialFromError(error);
       // ...
     });
 };
