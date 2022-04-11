@@ -5,51 +5,29 @@ import {
   query,
   orderBy,
   onSnapshot,
-  getDocs,
+  deleteDoc,
+  doc,
 } from './firebase-imports.js';
 import { auth, db } from './firebase-config.js';
-// import { async } from 'regenerator-runtime';
 
 export const savePost = (post) => {
   const user = auth.currentUser;
   const date = new Date();
+  const docRef = collection(db, 'posts');
   addDoc(collection(db, 'posts'), {
     uid: user.uid,
+    ID: docRef.id,
     email: user.email,
     username: user.displayName,
     photo: user.photoURL,
     date,
     post,
   });
-  // .then((e) => {
-  //   e.preventDefault();
-  // // eslint-disable-next-line no-param-reassign
-  //   const postAreaClean = document.getElementById('postText').value;
-  //   postAreaClean.innerHtml = '';
-  // });
+  console.log(user);
 };
+export const deletePost = (id) => deleteDoc(doc(db, 'posts', id));
 
-// export async function savePost() {
-//   const user = auth.currentUser;
-//   const date = new Date();
-//   const post = document.getElementById('postText').value;
-//   try {
-//     const docRef = doc(collection(db, 'posts'));
-//     const datapost = {
-//       idDocument: docRef.id,
-//       uid: user.uid,
-//       username: user.displayName,
-//       photo: user.photoURL,
-//       date,
-//       post,
-//     };
-//     await setDoc(docRef, datapost);
-//   } catch (e) {
-//     console.error('Error addind document: ', e);
-//   }
-// }
-
-const renderPost = (data) => {
+const renderPost = (data, postId) => {
   const postFeedNews = document.getElementById('postFeed');
   const post = document.createElement('section');
   post.className = 'sectionContainerPost2';
@@ -65,10 +43,19 @@ const renderPost = (data) => {
   const likes = document.createElement('img');
   likes.setAttribute('src', './assets/likes.png');
   likes.className = 'like';
-  const trash = document.createElement('img');
-  trash.setAttribute('src', './assets/trash.png');
-  trash.className = 'trash';
-  post.append(name, photo, postText, likes, trash);
+  const user = auth.currentUser;
+  if (user.uid === data.uid) {
+    const trash = document.createElement('img');
+    trash.setAttribute('src', './assets/trash.png');
+    trash.setAttribute('data-id', postId);
+    trash.className = 'trash';
+    trash.addEventListener('click', () => {
+      deletePost(postId);
+    });
+    post.append(name, photo, postText, likes, trash);
+  } else {
+    post.append(name, photo, postText, likes);
+  }
   postFeedNews.append(post);
   return postFeedNews;
 };
@@ -76,26 +63,10 @@ const renderPost = (data) => {
 export const showPosts = () => {
   const q = query(collection(db, 'posts'), orderBy('date', 'desc'));
   onSnapshot(q, (querySnapshot) => {
-    let postsInfo = [];
-    querySnapshot.docs.forEach((doc) => {
-      postsInfo.push({ ...doc.data(), id: doc.id });
-      renderPost(doc.data());
+    document.getElementById('postFeed').innerHTML = '';
+    querySnapshot.forEach((docs) => {
+      const ID = docs.id;
+      renderPost(docs.data(), ID);
     });
-    console.log(postsInfo);
   });
 };
-// showPosts();
-
-// export async function showPosts() {
-//   const q = await query(collection(db, 'posts'), orderBy('date', 'desc'));
-//   onSnapshot(q, (querySnapshot) => {
-//     // let postsInfo = [];
-//     querySnapshot.docs.forEach((post) => {
-//       // postsInfo.push({ ...post.data() });
-//       const postDocs = post.data();
-//       // console.log(postDocs.date);
-//       //console.log(postDocs);
-//       renderPost(postDocs);
-//     });
-//   });
-// }

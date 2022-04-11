@@ -6,7 +6,7 @@ import { logOut } from '../lib/firebase-auth.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   // console.log('works');
-  showPosts();
+  // showPosts();
 });
 
 export const home = () => {
