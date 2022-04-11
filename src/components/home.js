@@ -5,7 +5,7 @@ import { savePost, showPosts } from '../lib/firebase-posts.js';
 import { logOut } from '../lib/firebase-auth.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('works');
+  // console.log('works');
   showPosts();
 });
 
@@ -41,10 +41,12 @@ export const home = () => {
   postText.id = 'postText';
   postText.placeholder = 'What are you playing?';
   const submitPost = document.createElement('button');
+  // submitPost.setAttribute('type', 'submit');
   submitPost.id = 'submitPost';
   submitPost.className = 'submitPost';
   submitPost.textContent = 'Post';
-  submitPost.addEventListener('click', () => {
+  submitPost.addEventListener('click', (e) => {
+    e.preventDefault();
     const post = document.getElementById('postText').value;
     savePost(post);
   });

@@ -1,22 +1,53 @@
+/* eslint-disable prefer-const */
 import {
   collection,
   addDoc,
   query,
   orderBy,
   onSnapshot,
+  getDocs,
 } from './firebase-imports.js';
 import { auth, db } from './firebase-config.js';
+// import { async } from 'regenerator-runtime';
 
 export const savePost = (post) => {
   const user = auth.currentUser;
   const date = new Date();
   addDoc(collection(db, 'posts'), {
+    uid: user.uid,
+    email: user.email,
     username: user.displayName,
     photo: user.photoURL,
     date,
     post,
   });
+  // .then((e) => {
+  //   e.preventDefault();
+  // // eslint-disable-next-line no-param-reassign
+  //   const postAreaClean = document.getElementById('postText').value;
+  //   postAreaClean.innerHtml = '';
+  // });
 };
+
+// export async function savePost() {
+//   const user = auth.currentUser;
+//   const date = new Date();
+//   const post = document.getElementById('postText').value;
+//   try {
+//     const docRef = doc(collection(db, 'posts'));
+//     const datapost = {
+//       idDocument: docRef.id,
+//       uid: user.uid,
+//       username: user.displayName,
+//       photo: user.photoURL,
+//       date,
+//       post,
+//     };
+//     await setDoc(docRef, datapost);
+//   } catch (e) {
+//     console.error('Error addind document: ', e);
+//   }
+// }
 
 const renderPost = (data) => {
   const postFeedNews = document.getElementById('postFeed');
@@ -42,13 +73,29 @@ const renderPost = (data) => {
   return postFeedNews;
 };
 
-export async function showPosts() {
-  const q = await query(collection(db, 'posts'), orderBy('date', 'desc'));
+export const showPosts = () => {
+  const q = query(collection(db, 'posts'), orderBy('date', 'desc'));
   onSnapshot(q, (querySnapshot) => {
-    querySnapshot.forEach((post) => {
-      const postDocs = post.data();
-      console.log(postDocs.date);
-      renderPost(postDocs);
+    let postsInfo = [];
+    querySnapshot.docs.forEach((doc) => {
+      postsInfo.push({ ...doc.data(), id: doc.id });
+      renderPost(doc.data());
     });
+    console.log(postsInfo);
   });
-}
+};
+// showPosts();
+
+// export async function showPosts() {
+//   const q = await query(collection(db, 'posts'), orderBy('date', 'desc'));
+//   onSnapshot(q, (querySnapshot) => {
+//     // let postsInfo = [];
+//     querySnapshot.docs.forEach((post) => {
+//       // postsInfo.push({ ...post.data() });
+//       const postDocs = post.data();
+//       // console.log(postDocs.date);
+//       //console.log(postDocs);
+//       renderPost(postDocs);
+//     });
+//   });
+// }
