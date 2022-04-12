@@ -313,16 +313,15 @@ body {
   display: grid;
   grid-template-columns: 20% 80%;
   grid-template-rows: auto auto auto;
-  margin-top: 20px;
-  width: 298px;
-  height: 84px;
+  justify-self: center;
+  top: 150px;
+  width: 19rem;
+  height: 6rem;
   background: rgba(73, 25, 110, 0.24);
   border: 1px solid #e587ed;
   box-sizing: border-box;
   box-shadow: 0px 0px 8px #e587ed;
   border-radius: 10px;
-  margin-top: 150px;
-  margin-left: 20px;
 }
 
 .sectionContainerPost > img {
@@ -348,11 +347,13 @@ body {
 }
 
 #postFeed {
+  position: relative;
+  top: 180px;
 overflow: scroll;
 flex-direction: column;
 display: flex;
 width: 100%;
-height: 350px;
+height: 600px;
 }
 
 .sectionContainerPost2 {
@@ -367,8 +368,8 @@ height: 350px;
   box-sizing: border-box;
   box-shadow: 0px 0px 8px #e587ed;
   border-radius: 10px;
-  margin-top: 25px;
-  margin-left: 15px;
+  align-self: center;
+  margin: 1rem;
 }
 
 .sectionContainerPost2 #photo {
@@ -440,8 +441,8 @@ margin-top: 10px;
   grid-row: 2/3;
   justify-self: end;
   margin-right: 10px;
-  width: 192px;
-  height: 35px;
+  width: 12rem;
+  height: 3rem;
   color: #e587ed;
   background: #3f2959;
   border-radius: 10px;
@@ -468,6 +469,36 @@ margin-top: 10px;
   border-radius: 10px;
   background-color: transparent;
   cursor: pointer;
+}
+
+#deleteModal {
+  position: absolute;
+  justify-self: center;
+  align-self: center;
+  width: 17rem;
+  height: 15rem;
+  border: 1px solid #e587ed;
+  background: linear-gradient(180deg, #010409 -19.53%, #5B1E87 120.47%);
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0px 0px 8px #e587ed;
+  z-index: 2;
+}
+
+.deleteText {
+  position: absolute;
+  color: #f2a928;
+  margin:auto;
+  top: 5rem;
+  width: fit-content;
+  height: fit-content;
+  font-size: 1.5rem;
+}
+
+.btnModal {
+  margin: 1rem;
+  position: relative;
+  top: 10rem;
 }
 
 .footer {

@@ -9,6 +9,7 @@ import {
   doc,
 } from './firebase-imports.js';
 import { auth, db } from './firebase-config.js';
+import { renderPost } from '../components/posts.js';
 
 export const savePost = (post) => {
   const user = auth.currentUser;
@@ -23,41 +24,6 @@ export const savePost = (post) => {
     date,
     post,
   });
-  console.log(user);
-};
-export const deletePost = (id) => deleteDoc(doc(db, 'posts', id));
-
-const renderPost = (data, postId) => {
-  const postFeedNews = document.getElementById('postFeed');
-  const post = document.createElement('section');
-  post.className = 'sectionContainerPost2';
-  const name = document.createElement('p');
-  name.className = 'usernameAllPost';
-  name.textContent = data.username;
-  const photo = document.createElement('img');
-  photo.src = data.photo;
-  photo.id = 'photo';
-  const postText = document.createElement('p');
-  postText.className = 'coments';
-  postText.textContent = data.post;
-  const likes = document.createElement('img');
-  likes.setAttribute('src', './assets/likes.png');
-  likes.className = 'like';
-  const user = auth.currentUser;
-  if (user.uid === data.uid) {
-    const trash = document.createElement('img');
-    trash.setAttribute('src', './assets/trash.png');
-    trash.setAttribute('data-id', postId);
-    trash.className = 'trash';
-    trash.addEventListener('click', () => {
-      deletePost(postId);
-    });
-    post.append(name, photo, postText, likes, trash);
-  } else {
-    post.append(name, photo, postText, likes);
-  }
-  postFeedNews.append(post);
-  return postFeedNews;
 };
 
 export const showPosts = () => {
@@ -70,3 +36,5 @@ export const showPosts = () => {
     });
   });
 };
+
+export const deletePost = (id) => deleteDoc(doc(db, 'posts', id));

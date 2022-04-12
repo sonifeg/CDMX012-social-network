@@ -27,6 +27,7 @@ export const home = () => {
   // Your posts
   const postSection = document.createElement('section');
   postSection.className = 'main';
+  postSection.id = 'mainPostSection';
   const activity = document.createElement('p');
   activity.textContent = 'Activity';
   activity.className = 'activity';
