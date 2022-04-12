@@ -2,9 +2,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
- /* outline: 1px solid red;*/
-  width: 360px;
-  height: 640px;
+  width: 100vw;
+  height: 100vh;
+  /* outline: 1px solid red;*/
 }
 
 @font-face {
@@ -32,8 +32,7 @@ body {
 .meetArcade {
   width: 95%;
   padding-left: 20px;
-  height: 260px;
-  /* justify-self: center; */
+  height: auto;
 }
 
 .divContainer {
@@ -63,6 +62,7 @@ body {
 .screenJoin {
   display: flex;
   flex-flow: wrap column;
+  align-items: center;
 }
 
 .header {
@@ -97,26 +97,24 @@ body {
 .sign {
   color: #f2a928;
   height: auto;
-  margin-left: 20px;
+  /* margin-left: 20px; */
   font-size: 18px;
   font-family: "Roboto", sans-serif;
   margin-top: 10px;
-  width: fit-content;
+  width: 100%;
+  text-align: center;
 }
 
 .container {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  gap: 10px;
-  height: 60px;
+  justify-content: center;
+  height: 68px;
   margin-bottom: 50px;
 }
 
 .container img {
-  width: 90px;
-  height: 60px;
-  margin-left: 20px;
+  width: auto;
+  height: auto;
   cursor: pointer;
 }
 
@@ -126,7 +124,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: -15px;
+  /* margin-left: -15px; */
 }
 
 .text {
@@ -143,7 +141,7 @@ body {
   height: 50px;
   background: #c4c4c440;
   border-radius: 10px;
-  margin-left: 20px;
+  /* margin-left: 20px; */
   padding-left: 20px;
   font-size: 18px;
   display: flex;
@@ -160,6 +158,7 @@ body {
   position: relative;
   bottom: 2.5rem;
   left: 6.5rem;
+  margin-right: 20px;
 }
 
 .messages {
@@ -167,11 +166,6 @@ body {
   height: fit-content;
   color: #f2a928;
   font-size: 14px;
-}
-
-.btn:hover {
-  color: #3c155c;
-  background-color: #e587ed;
 }
 
 .btnsSign {
@@ -184,8 +178,7 @@ body {
   box-shadow: 0px 0px 5px 3px rgba(229, 135, 237, 0.75);
   border-radius: 10px;
   background-color: #c4c4c400;
-  margin-left: 32%;
-  margin-top: 50px;
+  margin-top: 20px;
   text-align: center;
   cursor: pointer;
 }
@@ -204,6 +197,11 @@ body {
   margin-top: 50px;
   text-align: center;
   cursor: pointer;
+}
+
+.btn:hover {
+  color: #3c155c;
+  background-color: #e587ed;
 }
 
 .containerFooter {
@@ -229,17 +227,9 @@ body {
   cursor: pointer;
 }
 
-/* .sign a{
-    color: #F2A928;
-    height: auto;
-    margin-left: 5px;
-    font-size: 18px;
-    font-family:'Roboto', sans-serif; 
-}   */
-
 .usernameHeader {
   position: absolute;
-  width: 22.5rem;
+  width: 100%;
   height: 5rem;
   left: 0px;
   top: 0px;
@@ -247,12 +237,6 @@ body {
   border: 1px solid #E587ED;
   box-sizing: border-box;
   box-shadow: 0px 4px 8px #e587edbf;
-}
-
-#postText {
-  width: 16rem;
-  height: 3rem;
-  resize: none;
 }
 
 .userImg {
@@ -285,26 +269,28 @@ body {
   margin-top: 3px;
 }
 
+.submitPost.signOut {
+  visibility: hidden;
+}
+
 .main {
-  justify-content: center;
+  align-items: center;
   position: relative;
   width: 100%;
   height: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
 }
 
-.activity {
+#activity {
   height: fit-content;
   width: fit-content;
+  margin-top: 100px;
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
   color: #ffffff;
   position: absolute;
-  margin-top: 100px;
   margin-left: 20px;
 }
 
@@ -313,7 +299,6 @@ body {
   display: grid;
   grid-template-columns: 20% 80%;
   grid-template-rows: auto auto auto;
-  margin-top: 20px;
   width: 298px;
   height: 84px;
   background: rgba(73, 25, 110, 0.24);
@@ -322,10 +307,10 @@ body {
   box-shadow: 0px 0px 8px #e587ed;
   border-radius: 10px;
   margin-top: 150px;
-  margin-left: 20px;
+  align-self: center;
 }
 
-.sectionContainerPost > img {
+.sectionContainerPost>img {
   width: 3.5rem;
   height: 3.5rem;
   border: 2px solid #e587edbf;
@@ -339,7 +324,7 @@ body {
   margin-left: 10px;
 }
 
-.sectionContainerPost > button {
+.sectionContainerPost>button {
   grid-column: 2/3;
   grid-row: 3/4;
   justify-self: end;
@@ -348,18 +333,20 @@ body {
 }
 
 #postFeed {
-overflow: scroll;
-flex-direction: column;
-display: flex;
-width: 100%;
-height: 350px;
+  overflow: scroll;
+  flex-direction: column;
+  display: flex;
+  width: 100%;
+  height: 90%;
+  margin-top: 20px;
+  align-items: center;
 }
 
 .sectionContainerPost2 {
   position: relative;
   display: grid;
   grid-template-columns: 20% 70% 10%;
-  grid-template-rows: 45px 45px ;
+  grid-template-rows: 45px 45px;
   width: 300px;
   height: 90px;
   background: rgba(73, 25, 110, 0.24);
@@ -368,7 +355,6 @@ height: 350px;
   box-shadow: 0px 0px 8px #e587ed;
   border-radius: 10px;
   margin-top: 25px;
-  margin-left: 15px;
 }
 
 .sectionContainerPost2 #photo {
@@ -396,10 +382,10 @@ height: 350px;
   font-size: 18px;
 }
 
-.coments{
+.coments {
   position: absolute;
   grid-column: 2/3;
-  grid-row:2/3 ;
+  grid-row: 2/3;
   width: fit-content;
   height: fit-content;
   color: #F3F3F3;
@@ -408,21 +394,21 @@ height: 350px;
   text-align: center;
 }
 
-.like{
-width: 26px;
-height: 26px;
-grid-column: 3/4;
-grid-row: 1/2;
-margin-top: 10px;
+.like {
+  width: 26px;
+  height: 26px;
+  grid-column: 3/4;
+  grid-row: 1/2;
+  margin-top: 10px;
 }
 
-.trash{
+.trash {
   width: 16px;
   height: 20px;
   grid-column: 3/4;
-  grid-row: 2/3;  
+  grid-row: 2/3;
   margin-left: 5px;
-  }
+}
 
 .usernamePost {
   color: transparent;
@@ -470,6 +456,36 @@ margin-top: 10px;
   cursor: pointer;
 }
 
+#deleteModal {
+  position: absolute;
+  justify-self: center;
+  align-self: center;
+  width: 17rem;
+  height: 15rem;
+  border: 1px solid #e587ed;
+  background: linear-gradient(180deg, #010409 -19.53%, #5B1E87 120.47%);
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0px 0px 8px #e587ed;
+  z-index: 2;
+}
+
+.deleteText {
+  position: absolute;
+  color: #f2a928;
+  margin: auto;
+  top: 5rem;
+  width: fit-content;
+  height: fit-content;
+  font-size: 1.5rem;
+}
+
+.btnModal {
+  margin: 1rem;
+  position: relative;
+  top: 10rem;
+}
+
 .footer {
   width: 100%;
   height: 50px;
@@ -479,9 +495,129 @@ margin-top: 10px;
   box-shadow: 0px 0px 8px #e587ed;
   display: flex;
   justify-content: flex-end;
+  visibility: visible;
 }
 
 .footer button {
   align-self: center;
   margin-right: 10px;
+}
+
+@media screen and (min-width: 620px) {
+  #root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  #logIn {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 80%;
+    height: 80%;
+    background: rgba(217, 30, 233, 0.3);
+    border: 8px solid #D91EE9;
+    box-shadow: 0px 0px 5px rgba(16, 235, 193, 0.75);
+    border-radius: 45px;
+  }
+
+  .meetArcade {
+    width: 488px;
+    height: auto;
+  }
+
+  .divContainer {
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+    width: 488px;
+    height: 60px;
+  }
+
+  .sectionContainerPost {
+    width: 75%;
+    height: 6rem;
+    align-self: center;
+  }
+
+  #postText {
+    position: relative;
+    top: 20%;
+    justify-self: start;
+    align-self: center;
+    width: 75%;
+    height: 50px;
+    color: #e587ed;
+    background: #3f2959;
+    border-radius: 10px;
+    font-size: 18px;
+    resize: none;
+  }
+
+  .username {
+    position: absolute;
+    font-size: 1.5rem;
+    width: fit-content;
+    height: fit-content;
+    top: 25%;
+    left: 15%;
+  }
+
+  .sectionContainerPost2 {
+    position: relative;
+    width: 75%;
+    height: auto;
+    margin: 1rem;
+  }
+
+  .usernameAllPost {
+    position: absolute;
+    font-size: 1.5rem;
+  }
+
+  .coments {
+    position: absolute;
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .sectionContainerPost>button {
+    position: relative;
+    justify-self: end;
+    bottom: 20px;
+    align-self: center;
+  }
+
+  .submitPost.signOut {
+    visibility: visible;
+    width: 5rem;
+    height: 2rem;
+    font-size: 1rem;
+    line-height: 16px;
+    position: absolute;
+    right: 10%;
+    top: 30%;
+    cursor: pointer;
+    z-index: 3;
+  }
+
+  #postFeed {
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+    align-items: center;
+  }
+
+  .footer {
+    visibility: hidden;
+  }
+
+  .log {
+    width: 180px;
+    height: 60px;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
 }
