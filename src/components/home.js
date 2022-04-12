@@ -6,7 +6,7 @@ import { logOut } from '../lib/firebase-auth.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   // console.log('works');
-  // showPosts();
+  showPosts();
 });
 
 export const home = () => {
@@ -22,15 +22,20 @@ export const home = () => {
   const usernameProfile = document.createElement('p');
   usernameProfile.className = 'username';
   userInfo(userImg, usernameProfile);
+  const signOutButton2 = document.createElement('button');
+  signOutButton2.className = 'submitPost signOut';
+  signOutButton2.textContent = 'Sign Out';
+  signOutButton2.addEventListener('click', () => {
+    logOut();
+  });
 
   // main section
   // Your posts
   const postSection = document.createElement('section');
   postSection.className = 'main';
-  postSection.id = 'mainPostSection';
   const activity = document.createElement('p');
   activity.textContent = 'Activity';
-  activity.className = 'activity';
+  activity.id = 'activity';
   const writeSection = document.createElement('section');
   writeSection.className = 'sectionContainerPost';
   const userImg2 = document.createElement('img');
@@ -48,6 +53,7 @@ export const home = () => {
   submitPost.textContent = 'Post';
   submitPost.addEventListener('click', (e) => {
     e.preventDefault();
+    postText.innerHTML = '';
     const post = document.getElementById('postText').value;
     savePost(post);
   });
@@ -68,7 +74,7 @@ export const home = () => {
   });
 
   // appends
-  newsHeader.append(userImg, usernameProfile);
+  newsHeader.append(userImg, usernameProfile, signOutButton2);
   postSection.append(activity, writeSection, postFeed);
   writeSection.append(userImg2, usernameProfile2, postText, submitPost);
   footerMeet.appendChild(signOutButton);
