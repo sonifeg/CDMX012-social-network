@@ -99,6 +99,9 @@ export const login = () => {
   errorMessage.className = 'messages';
   errorMessage.id = 'pError';
 
+  const divContainer = document.createElement('div');
+  divContainer.className = 'pinkContainer';
+
   const divFooter = document.createElement('div');
   divFooter.className = 'containerFooter';
 
@@ -115,10 +118,11 @@ export const login = () => {
     onNavigate('/register');
   });
 
+  divContainer.append(logInWith, containerIcons, infoForm, btnInfoShootIn);
   header.append(imgArrowBack, titles);
   containerIcons.appendChild(iconG);
   infoForm.append(labelMail, inputEmail, labelPassword, inputPassword, maskifyOff, maskifyOn, errorMessage);
   divFooter.append(labelHaveAcc, btnRefJoinUs);
-  shootInSection.append(header, logInWith, containerIcons, infoForm, btnInfoShootIn, divFooter);
+  shootInSection.append(header, divContainer, divFooter);
   return shootInSection;
 };

@@ -57,12 +57,13 @@ body {
   font-size: 18px;
 }
 
-/* Segunda seccion join us */
+/*Join Us y Shoot In */
 
 .screenJoin {
   display: flex;
   flex-flow: wrap column;
   align-items: center;
+  justify-content: center;
 }
 
 .header {
@@ -94,28 +95,36 @@ body {
   margin: 10px 15px 10px 15px;
 }
 
+ .pinkContainer{
+    width: 100%;
+    height: fit-content;
+    position: absolute;
+    text-align: center;
+  } 
+
 .sign {
   color: #f2a928;
   height: auto;
-  /* margin-left: 20px; */
   font-size: 18px;
   font-family: "Roboto", sans-serif;
-  margin-top: 10px;
   width: 100%;
   text-align: center;
+  z-index: 1;
 }
 
 .container {
-  display: flex;
+  width: 100%;
   justify-content: center;
+  display: flex;
+  flex-direction: row;
   height: 68px;
-  margin-bottom: 50px;
 }
 
 .container img {
   width: auto;
   height: auto;
   cursor: pointer;
+  z-index: 1;
 }
 
 .formContainer {
@@ -124,6 +133,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 1;
   /* margin-left: -15px; */
 }
 
@@ -181,6 +191,7 @@ body {
   margin-top: 20px;
   text-align: center;
   cursor: pointer;
+  z-index: 1;
 }
 
 .btnShootIn {
@@ -509,6 +520,8 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    background-image: url('assets/backgrounddesktop.png');
+    background-size: cover;
   }
 
   #logIn {
@@ -523,6 +536,13 @@ body {
     border-radius: 45px;
   }
 
+  .titles {
+  text-align: center;
+  margin-left: 0;
+  font-size: 40px;
+  margin-right: 70px;
+  }
+
   .meetArcade {
     width: 488px;
     height: auto;
@@ -535,11 +555,22 @@ body {
     width: 488px;
     height: 60px;
   }
+  .btnsSign {
+    color: #10EBC1;
+    border: 3px solid #10EBC1;
+    box-shadow:  0px 5px 3px rgba(16, 235, 193, 0.75);
+    background-color: #c4c4c400;
+  }
 
   .sectionContainerPost {
     width: 75%;
     height: 6rem;
     align-self: center;
+    background: rgba(217, 30, 233, 0.4);
+    border: 2px solid #D91EE9;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 8px #E587ED;
+    border-radius: 10px;
   }
 
   #postText {
@@ -549,11 +580,15 @@ body {
     align-self: center;
     width: 75%;
     height: 50px;
-    color: #e587ed;
-    background: #3f2959;
-    border-radius: 10px;
-    font-size: 18px;
-    resize: none;
+    background: #210E36;
+    font-size: 20px;
+  }
+
+  #postText::placeholder {
+    font-size: 20px;
+    color: #f3f3f33b;
+    padding-left: 15px;
+    padding-top: 8px;
   }
 
   .username {
@@ -570,6 +605,11 @@ body {
     width: 75%;
     height: auto;
     margin: 1rem;
+    background: rgba(217, 30, 233, 0.4);
+    border: 2px solid #D91EE9;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 8px #E587ED;
+    border-radius: 10px;
   }
 
   .usernameAllPost {
@@ -620,4 +660,14 @@ body {
     font-size: 28px;
     margin-bottom: 20px;
   }
+
+  .pinkContainer{
+    background: rgba(217, 30, 233, 0.3);
+    border: 8px solid #D91EE9;
+    box-shadow: 0px 0px 5px rgba(16, 235, 193, 0.75);
+    border-radius: 60px;
+    width: 40%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  } 
 }
