@@ -37,12 +37,12 @@ export const register = () => {
     googleSignIn();
   });
 
-  const iconF = document.createElement('img');
-  iconF.setAttribute('src', './assets/facebook.png');
-  iconF.addEventListener('click', (e) => {
-    e.preventDefault();
-    facebookLogin();
-  });
+  // const iconF = document.createElement('img');
+  // iconF.setAttribute('src', './assets/facebook.png');
+  // iconF.addEventListener('click', (e) => {
+  //   e.preventDefault();
+  //   facebookLogin();
+  // });
 
   // window.addEventListener('DOMContentLoaded', () => {
   //   console.log('works');
@@ -141,7 +141,7 @@ export const register = () => {
   });
 
   header.append(imgArrowBack, titles);
-  containerIcons.append(iconG, iconF);
+  containerIcons.appendChild(iconG);
   infoForm.append(labelUser, inputUserName, labelMail, inputEmail, labelPassword, inputPassword, maskifyOff, maskifyOn, errorMessage);
   divFooter.append(labelHaveAcc, btnRefLogin);
   joinUsSection.append(header, signInWith, containerIcons, infoForm, btnInfoJoinUs, divFooter);

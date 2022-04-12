@@ -75,7 +75,9 @@ const renderPost = (data) => {
 
 export const showPosts = () => {
   const q = query(collection(db, 'posts'), orderBy('date', 'desc'));
+
   onSnapshot(q, (querySnapshot) => {
+    document.getElementById('postFeed').innerHTML = '';
     let postsInfo = [];
     querySnapshot.docs.forEach((doc) => {
       postsInfo.push({ ...doc.data(), id: doc.id });
