@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 /* eslint-disable import/no-cycle */
-import { shootIn, googleSignIn, facebookLogin } from '../lib/firebase-auth.js';
+import { shootIn, googleSignIn } from '../lib/firebase-auth.js';
 import { onNavigate } from '../main.js';
 
 export const login = () => {
@@ -35,13 +35,6 @@ export const login = () => {
     e.preventDefault();
     googleSignIn();
   });
-
-  // const iconF = document.createElement('img');
-  // iconF.setAttribute('src', './assets/facebook.png');
-  // iconF.addEventListener('click', (e) => {
-  //   e.preventDefault();
-  //   facebookLogin();
-  // });
 
   const infoForm = document.createElement('form');
   infoForm.className = 'formContainer';

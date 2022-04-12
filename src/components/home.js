@@ -22,6 +22,12 @@ export const home = () => {
   const usernameProfile = document.createElement('p');
   usernameProfile.className = 'username';
   userInfo(userImg, usernameProfile);
+  const signOutButton2 = document.createElement('button');
+  signOutButton2.className = 'submitPost signOut';
+  signOutButton2.textContent = 'Sign Out';
+  signOutButton2.addEventListener('click', () => {
+    logOut();
+  });
 
   // main section
   // Your posts
@@ -68,7 +74,7 @@ export const home = () => {
   });
 
   // appends
-  newsHeader.append(userImg, usernameProfile);
+  newsHeader.append(userImg, usernameProfile, signOutButton2);
   postSection.append(activity, writeSection, postFeed);
   writeSection.append(userImg2, usernameProfile2, postText, submitPost);
   footerMeet.appendChild(signOutButton);

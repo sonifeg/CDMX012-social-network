@@ -1,8 +1,7 @@
 /* eslint-disable import/no-cycle */
 /* eslint-disable max-len */
 import { onNavigate } from '../main.js';
-import { createNewUsers, googleSignIn, facebookLogin } from '../lib/firebase-auth.js';
-// import { async } from 'regenerator-runtime';
+import { createNewUsers, googleSignIn } from '../lib/firebase-auth.js';
 
 export const register = () => {
   const joinUsSection = document.createElement('section');
@@ -16,7 +15,6 @@ export const register = () => {
   const imgArrowBack = document.createElement('img');
   imgArrowBack.setAttribute('src', './assets/arrow.png');
   imgArrowBack.className = 'arrowBack';
-  // imgArrowBack.id = 'aJ';
   imgArrowBack.addEventListener('click', () => {
     onNavigate('/');
   });
@@ -37,16 +35,6 @@ export const register = () => {
     googleSignIn();
   });
 
-  // const iconF = document.createElement('img');
-  // iconF.setAttribute('src', './assets/facebook.png');
-  // iconF.addEventListener('click', (e) => {
-  //   e.preventDefault();
-  //   facebookLogin();
-  // });
-
-  // window.addEventListener('DOMContentLoaded', () => {
-  //   console.log('works');
-  // });
   const infoForm = document.createElement('form');
   infoForm.className = 'formContainer';
   infoForm.id = 'formContainerInfo';
