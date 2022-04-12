@@ -19,7 +19,7 @@ export const register = () => {
     onNavigate('/');
   });
   // // -------ELIGE CON QUE HACER SIGN IN-----
-
+ 
   const signInWith = document.createElement('label');
   signInWith.className = 'sign';
   signInWith.textContent = 'Sign in with:';
@@ -27,7 +27,6 @@ export const register = () => {
   // containerIcons es contenedor del icono de Google
   const containerIcons = document.createElement('div');
   containerIcons.className = 'container';
-
   const iconG = document.createElement('img');
   iconG.setAttribute('src', './assets/google.png');
   iconG.addEventListener('click', (e) => {
@@ -103,6 +102,9 @@ export const register = () => {
   btnInfoJoinUs.id = 'submitInfoJoin';
   btnInfoJoinUs.textContent = 'Register';
 
+  const divContainer = document.createElement('div');
+  divContainer.className = 'pinkContainer';
+
   const divFooter = document.createElement('div');
   divFooter.className = 'containerFooter';
 
@@ -128,10 +130,11 @@ export const register = () => {
     createNewUsers(username, email, password);
   });
 
+  divContainer.append(signInWith, containerIcons, infoForm, btnInfoJoinUs);
   header.append(imgArrowBack, titles);
   containerIcons.appendChild(iconG);
   infoForm.append(labelUser, inputUserName, labelMail, inputEmail, labelPassword, inputPassword, maskifyOff, maskifyOn, errorMessage);
   divFooter.append(labelHaveAcc, btnRefLogin);
-  joinUsSection.append(header, signInWith, containerIcons, infoForm, btnInfoJoinUs, divFooter);
+  joinUsSection.append(header,divContainer, divFooter);
   return joinUsSection;
 };

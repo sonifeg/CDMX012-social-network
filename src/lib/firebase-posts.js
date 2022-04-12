@@ -29,6 +29,7 @@ export const savePost = (post) => {
 
 export const showPosts = () => {
   const q = query(collection(db, 'posts'), orderBy('date', 'desc'));
+
   onSnapshot(q, (querySnapshot) => {
     document.getElementById('postFeed').innerHTML = '';
     querySnapshot.forEach((docs) => {
