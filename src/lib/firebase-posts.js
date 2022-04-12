@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 /* eslint-disable prefer-const */
 import {
   collection,
