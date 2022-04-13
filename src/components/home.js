@@ -36,7 +36,7 @@ export const home = () => {
   const activity = document.createElement('p');
   activity.textContent = 'Activity';
   activity.id = 'activity';
-  const writeSection = document.createElement('section');
+  const writeSection = document.createElement('form');
   writeSection.className = 'sectionContainerPost';
   const userImg2 = document.createElement('img');
   userImg2.className = 'userImgPost';
@@ -53,11 +53,9 @@ export const home = () => {
   submitPost.textContent = 'Post';
   submitPost.addEventListener('click', (e) => {
     e.preventDefault();
-    postText.innerHTML = '';
     const post = document.getElementById('postText').value;
     savePost(post);
   });
-
   // post feed
   const postFeed = document.createElement('section');
   postFeed.id = 'postFeed';

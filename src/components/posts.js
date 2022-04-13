@@ -1,7 +1,6 @@
 /* eslint-disable import/no-cycle */
 import { auth } from '../lib/firebase-config.js';
-import { deletePost } from '../lib/firebase-posts.js';
-
+import { deletePost, catchPostToEdit, editPost } from '../lib/firebase-posts.js';
 
 const openModal = (postId) => {
   const postFeedNews = document.getElementById('postFeed');
@@ -23,6 +22,34 @@ const openModal = (postId) => {
     postFeedNews.removeChild(modal);
   });
   modal.append(text, btnDelete, btnClose);
+  postFeedNews.append(modal);
+  // deletePost(postId);
+};
+
+const openEditModal = (postId) => {
+  const postFeedNews = document.getElementById('postFeed');
+  const modal = document.createElement('section');
+  modal.id = 'editModal';
+  const text = document.createElement('p');
+  text.className = 'editText';
+  text.textContent = 'Do you want to edit this post?';
+  const inputValue = document.createElement('textArea');
+  inputValue.id = 'inputValueEdit';
+  catchPostToEdit(postId);
+  const btnEdit = document.createElement('button');
+  btnEdit.className = 'submitPost btnModal';
+  btnEdit.textContent = 'Edit';
+  btnEdit.addEventListener('click', (e) => {
+    e.preventDefault();
+    editPost(postId);
+  });
+  const btnCancel = document.createElement('button');
+  btnCancel.textContent = 'Cancel';
+  btnCancel.className = 'submitPost btnModal';
+  btnCancel.addEventListener('click', () => {
+    postFeedNews.removeChild(modal);
+  });
+  modal.append(text, inputValue, btnEdit, btnCancel);
   postFeedNews.append(modal);
   // deletePost(postId);
 };
@@ -61,12 +88,18 @@ export const renderPost = (data, postId) => {
     trash.setAttribute('src', './assets/trash.png');
     trash.setAttribute('data-id', postId);
     trash.className = 'trash';
+    const edit = document.createElement('img');
+    edit.setAttribute('src', './assets/edit.png');
+    edit.className = 'edit';
     trash.addEventListener('click', () => {
       openModal(postId);
     });
-    post.append(name, photo, postText, numberLikes, likes, trash);
+    edit.addEventListener('click', () => {
+      openEditModal();
+    });
+    post.append(name, photo, postText, likes, trash, edit);
   } else {
-    post.append(name, photo, postText, numberLikes, likes);
+    post.append(name, photo, postText, likes);
   }
   postFeedNews.append(post);
   return postFeedNews;
