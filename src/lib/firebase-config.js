@@ -14,12 +14,12 @@ import { initializeApp, getAuth, getFirestore } from './firebase-imports.js';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: 'AIzaSyD7f_fHQxFSiUkseJm9oNHkJ99jejC5j4M',
-  authDomain: 'meetarcade2.firebaseapp.com',
-  projectId: 'meetarcade2',
-  storageBucket: 'meetarcade2.appspot.com',
-  messagingSenderId: '977923019426',
-  appId: '1:977923019426:web:6b3f0fa227515792dffdfb',
+  apiKey: "AIzaSyAR5IRyDbhK8r5aNUQ55fXmycKTlssTonk",
+  authDomain: "prueba-post-7060e.firebaseapp.com",
+  projectId: "prueba-post-7060e",
+  storageBucket: "prueba-post-7060e.appspot.com",
+  messagingSenderId: "1029876398681",
+  appId: "1:1029876398681:web:eb79bee7b96ddf07710f48"
 };
 
 // Initialize Firebase

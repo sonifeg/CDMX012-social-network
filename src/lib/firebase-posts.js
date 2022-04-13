@@ -40,3 +40,27 @@ export const showPosts = () => {
 };
 
 export const deletePost = (id) => deleteDoc(doc(db, 'posts', id));
+
+/*export const heart = document.getElementById('noLike');
+function changeHeart() {
+  if (heart.getAttribute('src') === 'likes.png') {
+    heart.src = 'likeYes.png';
+  } else {
+    heart.src = 'likes.png';
+  }
+}
+
+const noLikes = document.createElement('img');
+  noLikes.setAttribute('src', './assets/likes.png');
+  noLikes.className = 'nolike';
+  noLikes.id = 'noLike';
+  noLikes.setAttribute('onclick', 'changeHeart');
+  noLikes.addEventListener('click'() => {
+    changeHeart()
+  };
+
+
+  const likes = document.createElement('img');
+  likes.setAttribute('src', './assets/likeYes.png');
+  likes.className = 'likeYes';
+  likes.id = 'likeYes';

@@ -406,19 +406,32 @@ body {
 }
 
 .like {
-  width: 26px;
-  height: 26px;
+  width: 30px;
+  height: 30px;
   grid-column: 3/4;
   grid-row: 1/2;
   margin-top: 10px;
 }
 
+.numberLikes{
+  width: 18px;
+  height: 18px;
+  border: 1px solid #10ebc1;
+  border-radius: 100%;
+  box-shadow: 0px 0px 5px 1px #10ebc1bf;
+  background-color: transparent;
+  grid-column: 3/5;
+  grid-row: 1/2;
+  margin-left: 35px;
+  margin-top: 15px;
+}
+
 .trash {
-  width: 16px;
-  height: 20px;
+  width: 18px;
+  height: 22px;
   grid-column: 3/4;
   grid-row: 2/3;
-  margin-left: 5px;
+  margin-left: 6px;
 }
 
 .usernamePost {
