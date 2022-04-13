@@ -19,7 +19,7 @@ export const welcome = () => {
   const btnShoot = document.createElement('button');
   btnShoot.className = 'btn log';
   btnShoot.id = 'ShootIn';
-  btnShoot.textContent = 'Log In';
+  btnShoot.textContent = 'Login';
   btnShoot.addEventListener('click', () => {
     onNavigate('/login');
   });

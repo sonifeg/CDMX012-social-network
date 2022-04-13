@@ -321,6 +321,20 @@ body {
   align-self: center;
 }
 
+.userImgPost {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: 6.67%;
+  right: 78.61%;
+  top: 1%;
+  bottom: 21.69%;
+  border: 2px solid #e587edbf;
+  box-sizing: border-box;
+  border-radius: 100%;
+  box-shadow: 0px 0px 5px 3px #e587edbf
+}
+
 .sectionContainerPost>img {
   width: 3.5rem;
   height: 3.5rem;

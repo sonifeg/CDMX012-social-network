@@ -115,7 +115,7 @@ export const register = () => {
   const btnRefLogin = document.createElement('button');
   btnRefLogin.className = 'btnRefLogin';
   btnRefLogin.id = 'refLogin';
-  btnRefLogin.textContent = 'Log in';
+  btnRefLogin.textContent = 'Login';
 
   btnRefLogin.addEventListener('click', () => {
     onNavigate('/login');
