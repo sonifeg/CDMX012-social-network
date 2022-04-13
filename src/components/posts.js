@@ -1,6 +1,6 @@
 /* eslint-disable import/no-cycle */
 import { auth } from '../lib/firebase-config.js';
-import { deletePost } from '../lib/firebase-posts.js';
+import { deletePost, editPost } from '../lib/firebase-posts.js';
 
 const openModal = (postId) => {
   const postFeedNews = document.getElementById('postFeed');
@@ -26,6 +26,35 @@ const openModal = (postId) => {
   // deletePost(postId);
 };
 
+const openModalEdit = () => {
+  const postFeedNews = document.getElementById('postFeed');
+  const modal = document.createElement('section');
+  modal.id = 'deleteModal';
+  const text = document.createElement('p');
+  text.className = 'deleteText';
+  text.textContent = 'Do you want to edit this post?';
+  const inputEdition = document.createElement('input');
+  inputEdition.id = 'inputEdition';
+ 
+  const btnEdit = document.createElement('button');
+  btnEdit.className = 'submitPost btnModal';
+  btnEdit.textContent = 'Yes';
+  btnEdit.addEventListener('click', () => {
+    const postValue = document.getElementById('textComents');
+    editPost(docs.id, inputEdition.value, docs.data().data);
+    console.log(postValue);
+  });
+  const cancelEdit = document.createElement('button');
+  cancelEdit.textContent = 'No';
+  cancelEdit.className = 'submitPost btnModal';
+  cancelEdit.addEventListener('click', () => {
+    postFeedNews.removeChild(modal);
+  });
+  modal.append(text, inputEdition, btnEdit, cancelEdit);
+  postFeedNews.append(modal);
+  // deletePost(postId);
+};
+
 export const renderPost = (data, postId) => {
   const postFeedNews = document.getElementById('postFeed');
   const post = document.createElement('section');
@@ -37,6 +66,7 @@ export const renderPost = (data, postId) => {
   photo.src = data.photo;
   photo.id = 'photo';
   const postText = document.createElement('p');
+  postText.id = 'textComents';
   postText.className = 'coments';
   postText.textContent = data.post;
   const likes = document.createElement('img');
@@ -48,10 +78,16 @@ export const renderPost = (data, postId) => {
     trash.setAttribute('src', './assets/trash.png');
     trash.setAttribute('data-id', postId);
     trash.className = 'trash';
+    const edit = document.createElement('img');
+    edit.setAttribute('src', './assets/edit.png');
+    edit.className = 'edit';
     trash.addEventListener('click', () => {
       openModal(postId);
     });
-    post.append(name, photo, postText, likes, trash);
+    edit.addEventListener('click', () => {
+      openModalEdit();
+    });
+    post.append(name, photo, postText, likes, trash, edit);
   } else {
     post.append(name, photo, postText, likes);
   }

@@ -1,3 +1,4 @@
+/* eslint-disable import/named */
 /* eslint-disable import/no-cycle */
 /* eslint-disable prefer-const */
 import {
@@ -8,6 +9,7 @@ import {
   onSnapshot,
   deleteDoc,
   doc,
+  updateDoc,
 } from './firebase-imports.js';
 import { auth, db } from './firebase-config.js';
 import { renderPost } from '../components/posts.js';
@@ -40,3 +42,11 @@ export const showPosts = () => {
 };
 
 export const deletePost = (id) => deleteDoc(doc(db, 'posts', id));
+
+export async function editPost(id, editInput, date) {
+  const postRef = doc(db, 'posts', id);
+  await updateDoc(postRef, {
+    post: editInput,
+    date: new Date(),
+  });
+}
