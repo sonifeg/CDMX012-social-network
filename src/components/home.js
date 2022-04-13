@@ -39,7 +39,7 @@ export const home = () => {
   const writeSection = document.createElement('section');
   writeSection.className = 'sectionContainerPost';
   const userImg2 = document.createElement('img');
-  userImg2.className = 'userImg';
+  userImg2.className = 'userImgPost';
   const usernameProfile2 = document.createElement('p');
   usernameProfile2.className = 'usernamePost';
   userInfo(userImg2, usernameProfile2);

@@ -19,7 +19,7 @@ export const register = () => {
     onNavigate('/');
   });
   // // -------ELIGE CON QUE HACER SIGN IN-----
- 
+
   const signInWith = document.createElement('label');
   signInWith.className = 'sign';
   signInWith.textContent = 'Sign in with:';
@@ -115,7 +115,7 @@ export const register = () => {
   const btnRefLogin = document.createElement('button');
   btnRefLogin.className = 'btnRefLogin';
   btnRefLogin.id = 'refLogin';
-  btnRefLogin.textContent = 'Log in';
+  btnRefLogin.textContent = 'Login';
 
   btnRefLogin.addEventListener('click', () => {
     onNavigate('/login');
@@ -135,6 +135,6 @@ export const register = () => {
   containerIcons.appendChild(iconG);
   infoForm.append(labelUser, inputUserName, labelMail, inputEmail, labelPassword, inputPassword, maskifyOff, maskifyOn, errorMessage);
   divFooter.append(labelHaveAcc, btnRefLogin);
-  joinUsSection.append(header,divContainer, divFooter);
+  joinUsSection.append(header, divContainer, divFooter);
   return joinUsSection;
 };

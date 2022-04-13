@@ -23,7 +23,7 @@ export const login = () => {
 
   const logInWith = document.createElement('label');
   logInWith.className = 'sign';
-  logInWith.textContent = 'Log in with:';
+  logInWith.textContent = 'Login with:';
 
   // containerIcons es contenedor del icono de Google
   const containerIcons = document.createElement('div');
@@ -85,7 +85,7 @@ export const login = () => {
   const btnInfoShootIn = document.createElement('button');
   btnInfoShootIn.className = 'btn btnsSign';
   btnInfoShootIn.id = 'submitInfoShoot';
-  btnInfoShootIn.textContent = 'Log In';
+  btnInfoShootIn.textContent = 'Login';
 
   btnInfoShootIn.addEventListener('click', (e) => {
     e.preventDefault();

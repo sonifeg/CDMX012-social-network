@@ -288,7 +288,7 @@ body {
   align-items: center;
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 92%;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -319,6 +319,20 @@ body {
   border-radius: 10px;
   margin-top: 150px;
   align-self: center;
+}
+
+.userImgPost {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: 6.67%;
+  right: 78.61%;
+  top: 1%;
+  bottom: 21.69%;
+  border: 2px solid #e587edbf;
+  box-sizing: border-box;
+  border-radius: 100%;
+  box-shadow: 0px 0px 5px 3px #e587edbf
 }
 
 .sectionContainerPost>img {
@@ -406,19 +420,37 @@ body {
 }
 
 .like {
-  width: 26px;
-  height: 26px;
+  width: 35px;
+  height: 35px;
   grid-column: 3/4;
   grid-row: 1/2;
-  margin-top: 10px;
+  margin-top: 8px;
+  margin-left: -3px;
+}
+
+.numberLikes{
+  width: 18px;
+  height: 18px;
+  border: none;
+  border-radius: 100%;
+  background-color: transparent;
+  grid-column: 3/4;
+  grid-row: 1/2;
+  /* grid-column: 3/5;
+  grid-row: 1/2; */
+  margin-left: 5px; 
+  margin-top: 15px;
+  text-align: center;
+  color:rgb(16, 235, 235);
+  text-shadow: 0px 0px 5px 1px #10ebc1;
 }
 
 .trash {
-  width: 16px;
-  height: 20px;
+  width: 18px;
+  height: 22px;
   grid-column: 3/4;
   grid-row: 2/3;
-  margin-left: 5px;
+  margin-left: 6px;
 }
 
 .usernamePost {

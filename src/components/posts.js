@@ -2,6 +2,7 @@
 import { auth } from '../lib/firebase-config.js';
 import { deletePost } from '../lib/firebase-posts.js';
 
+
 const openModal = (postId) => {
   const postFeedNews = document.getElementById('postFeed');
   const modal = document.createElement('section');
@@ -39,9 +40,21 @@ export const renderPost = (data, postId) => {
   const postText = document.createElement('p');
   postText.className = 'coments';
   postText.textContent = data.post;
+
+  const numberLikes = document.createElement('input');
+  numberLikes.className = 'numberLikes';
+  numberLikes.id = 'numberLikes';
+  numberLikes.value = '0';
+
   const likes = document.createElement('img');
   likes.setAttribute('src', './assets/likes.png');
   likes.className = 'like';
+  likes.id = 'likes';
+  likes.addEventListener('click', () => {
+    numberLikes.value = parseInt(numberLikes.value, 10) + 1;
+    console.log('it works!');
+  });
+
   const user = auth.currentUser;
   if (user.uid === data.uid) {
     const trash = document.createElement('img');
@@ -51,9 +64,9 @@ export const renderPost = (data, postId) => {
     trash.addEventListener('click', () => {
       openModal(postId);
     });
-    post.append(name, photo, postText, likes, trash);
+    post.append(name, photo, postText, numberLikes, likes, trash);
   } else {
-    post.append(name, photo, postText, likes);
+    post.append(name, photo, postText, numberLikes, likes);
   }
   postFeedNews.append(post);
   return postFeedNews;
