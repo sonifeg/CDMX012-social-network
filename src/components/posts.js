@@ -1,7 +1,7 @@
 /* eslint-disable import/no-cycle */
 import { auth } from '../lib/firebase-config.js';
 import { deletePost } from '../lib/firebase-posts.js';
-import { countHeart } from '../lib/firebase-likes.js';
+
 
 const openModal = (postId) => {
   const postFeedNews = document.getElementById('postFeed');
@@ -44,13 +44,14 @@ export const renderPost = (data, postId) => {
   const numberLikes = document.createElement('input');
   numberLikes.className = 'numberLikes';
   numberLikes.id = 'numberLikes';
+  numberLikes.value = '0';
 
   const likes = document.createElement('img');
   likes.setAttribute('src', './assets/likes.png');
   likes.className = 'like';
   likes.id = 'likes';
   likes.addEventListener('click', () => {
-    countHeart(postId);
+    numberLikes.value = parseInt(numberLikes.value, 10) + 1;
     console.log('it works!');
   });
 
