@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable import/named */
 /* eslint-disable import/no-cycle */
 /* eslint-disable prefer-const */
@@ -44,9 +45,7 @@ export const showPosts = () => {
 
 export const deletePost = (id) => deleteDoc(doc(db, 'posts', id));
 export const catchPostToEdit = (id) => getDoc(doc(db, 'posts', id)); // obtenter el post que se va a editar
-// export const editPost = (id, newPostValue) => updateDoc(doc(db, 'posts', id), newPostValue); // actualizar los datos del post
-
-export const editPost = async (id, newPostValue) => {
+export const editPost = async (id, newPostValue) => { // Actualizar datos del post y obtencion de coleccion
   const postCollection = doc(db, 'posts', id);
   await updateDoc(postCollection, {
     post: newPostValue,
