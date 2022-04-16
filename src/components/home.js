@@ -38,6 +38,7 @@ export const home = () => {
   activity.id = 'activity';
   const writeSection = document.createElement('form');
   writeSection.className = 'sectionContainerPost';
+  writeSection.id = 'sectionPostWrite';
   const userImg2 = document.createElement('img');
   userImg2.className = 'userImgPost';
   const usernameProfile2 = document.createElement('p');
@@ -55,7 +56,9 @@ export const home = () => {
     e.preventDefault();
     const post = document.getElementById('postText').value;
     savePost(post);
+    writeSection.reset();
   });
+
   // post feed
   const postFeed = document.createElement('section');
   postFeed.id = 'postFeed';

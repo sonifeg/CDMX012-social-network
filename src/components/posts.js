@@ -1,6 +1,8 @@
+/* eslint-disable import/no-unresolved */
 /* eslint-disable import/no-cycle */
 import { auth } from '../lib/firebase-config.js';
-import { deletePost, catchPostToEdit, editPost } from '../lib/firebase-posts.js';
+import { deletePost, editPost } from '../lib/firebase-posts.js';
+import { doc } from '../lib/firebase-imports.js';
 
 const openModal = (postId) => {
   const postFeedNews = document.getElementById('postFeed');
@@ -26,38 +28,42 @@ const openModal = (postId) => {
   // deletePost(postId);
 };
 
-const openEditModal = (postId) => {
-  const postFeedNews = document.getElementById('postFeed');
-  const modal = document.createElement('section');
-  modal.id = 'editModal';
-  const text = document.createElement('p');
-  text.className = 'editText';
-  text.textContent = 'Do you want to edit this post?';
-  const inputValue = document.createElement('textArea');
-  inputValue.id = 'inputValueEdit';
-  catchPostToEdit(postId);
-  const btnEdit = document.createElement('button');
-  btnEdit.className = 'submitPost btnModal';
-  btnEdit.textContent = 'Edit';
-  btnEdit.addEventListener('click', (e) => {
-    e.preventDefault();
-    editPost(postId);
-  });
-  const btnCancel = document.createElement('button');
-  btnCancel.textContent = 'Cancel';
-  btnCancel.className = 'submitPost btnModal';
-  btnCancel.addEventListener('click', () => {
-    postFeedNews.removeChild(modal);
-  });
-  modal.append(text, inputValue, btnEdit, btnCancel);
-  postFeedNews.append(modal);
-  // deletePost(postId);
-};
+// const openEditModal = () => {
+//   const postFeedNews = document.getElementById('postFeed');
+//   const modal = document.createElement('section');
+//   modal.id = 'editModal';
+//   const text = document.createElement('p');
+//   text.className = 'editText';
+//   text.textContent = 'Do you want to edit this post?';
+//   const inputValue = document.createElement('textArea');
+//   inputValue.id = 'inputValueEdit';
+//   // catchPostToEdit(postId);
+
+//   const btnEdit = document.createElement('button');
+//   btnEdit.id = 'btnEdit';
+//   btnEdit.className = 'submitPost btnModal';
+//   btnEdit.textContent = 'Edit';
+//   // btnEdit.addEventListener('click', (e) => {
+//   //   e.preventDefault();
+//   //   editPost(postId);
+//   // });
+//   const btnCancel = document.createElement('button');
+//   btnCancel.id = 'CancelBtn';
+//   btnCancel.textContent = 'Cancel';
+//   btnCancel.className = 'submitPost btnModal';
+//   btnCancel.addEventListener('click', () => {
+//     postFeedNews.removeChild(modal);
+//   });
+//   modal.append(text, inputValue, btnEdit, btnCancel);
+//   postFeedNews.append(modal);
+//   // deletePost(postId);
+// };
 
 export const renderPost = (data, postId) => {
   const postFeedNews = document.getElementById('postFeed');
   const post = document.createElement('section');
   post.className = 'sectionContainerPost2';
+  post.setAttribute('id', doc.id);
   const name = document.createElement('p');
   name.className = 'usernameAllPost';
   name.textContent = data.username;
@@ -67,6 +73,7 @@ export const renderPost = (data, postId) => {
   const postText = document.createElement('p');
   postText.className = 'coments';
   postText.textContent = data.post;
+  post.id = 'textPostValue';
 
   const numberLikes = document.createElement('input');
   numberLikes.className = 'numberLikes';
@@ -95,11 +102,33 @@ export const renderPost = (data, postId) => {
       openModal(postId);
     });
     edit.addEventListener('click', () => {
-      openEditModal();
+      if (edit) {
+        post.removeChild(postText);
+        const newContainer = document.createElement('div');
+        newContainer.setAttribute('id', 'newConteiner');
+        newContainer.className = 'newContainer';
+        const inputNewValue = document.createElement('input');
+        inputNewValue.id = 'inputNewValue';
+        inputNewValue.setAttribute('type', 'text');
+        inputNewValue.setAttribute('placeholder', data.post);
+        const btnSaveData = document.createElement('button');
+        btnSaveData.id = 'saveData';
+        btnSaveData.textContent = 'Edit';
+        newContainer.append(inputNewValue, btnSaveData);
+        post.appendChild(newContainer);
+
+        btnSaveData.addEventListener('click', () => {
+          const newPostValue = inputNewValue.value;
+          console.log(newPostValue);
+          // post.append(newContainer);
+          editPost(postId, newPostValue);
+          console.log(editPost);
+        });
+      }
     });
-    post.append(name, photo, postText, likes, trash, edit);
+    post.append(name, photo, postText, likes, numberLikes, trash, edit);
   } else {
-    post.append(name, photo, postText, likes);
+    post.append(name, photo, postText, likes, numberLikes);
   }
   postFeedNews.append(post);
   return postFeedNews;

@@ -44,4 +44,11 @@ export const showPosts = () => {
 
 export const deletePost = (id) => deleteDoc(doc(db, 'posts', id));
 export const catchPostToEdit = (id) => getDoc(doc(db, 'posts', id)); // obtenter el post que se va a editar
-export const editPost = (id, newPost) => updateDoc(doc(db, 'posts', id), newPost); // actualizar los datos del post
+// export const editPost = (id, newPostValue) => updateDoc(doc(db, 'posts', id), newPostValue); // actualizar los datos del post
+
+export const editPost = async (id, newPostValue) => {
+  const postCollection = doc(db, 'posts', id);
+  await updateDoc(postCollection, {
+    post: newPostValue,
+  });
+};
