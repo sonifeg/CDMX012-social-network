@@ -1,3 +1,5 @@
+/* eslint-disable max-len */
+/* eslint-disable import/named */
 /* eslint-disable import/no-cycle */
 /* eslint-disable prefer-const */
 import {
@@ -8,6 +10,8 @@ import {
   onSnapshot,
   deleteDoc,
   doc,
+  updateDoc,
+  getDoc,
 } from './firebase-imports.js';
 import { auth, db } from './firebase-config.js';
 import { renderPost } from '../components/posts.js';
@@ -40,3 +44,10 @@ export const showPosts = () => {
 };
 
 export const deletePost = (id) => deleteDoc(doc(db, 'posts', id));
+export const catchPostToEdit = (id) => getDoc(doc(db, 'posts', id)); // obtenter el post que se va a editar
+export const editPost = async (id, newPostValue) => { // Actualizar datos del post y obtencion de coleccion
+  const postCollection = doc(db, 'posts', id);
+  await updateDoc(postCollection, {
+    post: newPostValue,
+  });
+};
