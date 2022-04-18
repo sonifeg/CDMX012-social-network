@@ -23,7 +23,6 @@ const openModal = (postId) => {
   });
   modal.append(text, btnDelete, btnClose);
   postFeedNews.append(modal);
-  // deletePost(postId);
 };
 
 export const renderPost = (data, postId) => {
@@ -58,3 +57,12 @@ export const renderPost = (data, postId) => {
   postFeedNews.append(post);
   return postFeedNews;
 };
+
+const postLikes = () => {
+  const likes = document.querySelectorAll('.like');
+  likes.forEach((like) => {
+    like.addEventListener('click', (e) => {
+      e.target
+    })
+  })
+}

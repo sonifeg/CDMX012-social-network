@@ -133,6 +133,7 @@ body {
   font-family: "Roboto", sans-serif;
   height: fit-content;
   width: fit-content;
+  margin: 1rem;
 }
 
 .inputs {
@@ -141,8 +142,7 @@ body {
   height: 50px;
   background: #c4c4c440;
   border-radius: 10px;
-  /* margin-left: 20px; */
-  padding-left: 20px;
+  padding-left: 10px;
   font-size: 18px;
   display: flex;
 }
