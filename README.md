@@ -15,7 +15,7 @@ Permite a cualquier usuario crear una cuenta de acceso mediante Gmail y correo e
 
 El objetivo principal de este proyecto fue construir una Single-page Application (SPA) responsive (con más de una vista / página) en la cual se puede leer y escribir datos, almacenamiento de datos mediante firebase y firestore.
 ![Imagen final del proyecto](https://github.com/sonifeg/CDMX012-social-network/blob/ALMOST-DONE/iniciomovil.png?raw=true)
-![Imagen final del proyecto](https://github.com/sonifeg/CDMX012-data-network/blob/ALMOST-DONE/iniciodesktop.png?raw=true)
+![Imagen final del proyecto](https://github.com/sonifeg/CDMX012-social-network/blob/ALMOST-DONE/iniciodesktop.png?raw=true)
 
 
 ## 2. Investigación UX
