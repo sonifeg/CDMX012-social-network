@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/no-cycle */
 import { auth } from '../lib/firebase-config.js';
@@ -26,37 +27,6 @@ const openModal = (postId) => {
   modal.append(text, btnDelete, btnClose);
   postFeedNews.append(modal);
 };
-
-// const openEditModal = () => {
-//   const postFeedNews = document.getElementById('postFeed');
-//   const modal = document.createElement('section');
-//   modal.id = 'editModal';
-//   const text = document.createElement('p');
-//   text.className = 'editText';
-//   text.textContent = 'Do you want to edit this post?';
-//   const inputValue = document.createElement('textArea');
-//   inputValue.id = 'inputValueEdit';
-//   // catchPostToEdit(postId);
-
-//   const btnEdit = document.createElement('button');
-//   btnEdit.id = 'btnEdit';
-//   btnEdit.className = 'submitPost btnModal';
-//   btnEdit.textContent = 'Edit';
-//   // btnEdit.addEventListener('click', (e) => {
-//   //   e.preventDefault();
-//   //   editPost(postId);
-//   // });
-//   const btnCancel = document.createElement('button');
-//   btnCancel.id = 'CancelBtn';
-//   btnCancel.textContent = 'Cancel';
-//   btnCancel.className = 'submitPost btnModal';
-//   btnCancel.addEventListener('click', () => {
-//     postFeedNews.removeChild(modal);
-//   });
-//   modal.append(text, inputValue, btnEdit, btnCancel);
-//   postFeedNews.append(modal);
-//   // deletePost(postId);
-// };
 
 export const renderPost = (data, postId) => {
   const postFeedNews = document.getElementById('postFeed');
@@ -137,7 +107,7 @@ const postLikes = () => {
   const likes = document.querySelectorAll('.like');
   likes.forEach((like) => {
     like.addEventListener('click', (e) => {
-      e.target
-    })
-  })
-}
+      e.target;
+    });
+  });
+};

@@ -48,7 +48,6 @@ export const home = () => {
   postText.id = 'postText';
   postText.placeholder = 'What are you playing?';
   const submitPost = document.createElement('button');
-  // submitPost.setAttribute('type', 'submit');
   submitPost.id = 'submitPost';
   submitPost.className = 'submitPost';
   submitPost.textContent = 'Post';
