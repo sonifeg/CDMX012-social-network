@@ -54,10 +54,10 @@ Durante la creación de la página se mostraron  a usuarias los prototipos en su
 ## 4. Producto terminado
 ### Versión desktop
 
-![Imagen final del proyecto](https://github.com/sonifeg/CDMX012-social-network/blob/ALMOST-DONE/protohidesktop.PNG?raw=true)  
+![Imagen final del proyecto](https://github.com/sonifeg/CDMX012-social-network/blob/ALMOST-DONE/protohidesktop.png?raw=true)  
 
 
 ### Versión móvil
 
-![Imagen final del proyecto](https://github.com/sonifeg/CDMX012-social-network/blob/ALMOST-DONE/protohimovil.PNG?raw=true) 
+![Imagen final del proyecto](https://github.com/sonifeg/CDMX012-social-network/blob/ALMOST-DONE/protohimovil.png?raw=true) 
 
