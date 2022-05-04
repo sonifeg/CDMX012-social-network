@@ -2,39 +2,40 @@
 /* eslint-disable import/named */
 /* eslint-disable no-unused-vars */
 /* eslint-disable import/no-cycle */
-import { auth } from './firebase-config.js';
+import { auth } from "./firebase-config.js";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
   signOut,
-} from './firebase-imports.js';
-import { onNavigate } from '../main.js';
+} from "./firebase-imports.js";
+import { onNavigate } from "../main.js";
 
 // Create new users with email acc
 export const createNewUsers = (username, email, password) => {
   // authentication with email
   createUserWithEmailAndPassword(auth, email, password) // Crea el usuario
     .then((userCredential) => {
+      const user = userCredential.user;
       // console.log('User created');
       // alert('User created');
-      onNavigate('/home');
+      onNavigate("/home");
     })
     .catch((error) => {
       const errorCode = error.code;
-      const authError = document.getElementById('pError');
+      const authError = document.getElementById("pError");
 
-      if (errorCode === 'auth/invalid-email') {
-        authError.textContent = 'Write a valid mail example@gmail.com';
+      if (errorCode === "auth/invalid-email") {
+        authError.textContent = "Write a valid mail example@gmail.com";
         // alert('write a valid mail example@gmail.com');
       }
-      if (errorCode === 'auth/weak-password') {
-        authError.textContent = 'Your Password must have 6 characters at least';
+      if (errorCode === "auth/weak-password") {
+        authError.textContent = "Your Password must have 6 characters at least";
         // alert('Your Password must have 6 characters at least');
       }
-      if (errorCode === 'auth/email-already-in-use') {
-        authError.textContent = 'This email is in use, try another or logIn';
+      if (errorCode === "auth/email-already-in-use") {
+        authError.textContent = "This email is in use, try another or logIn";
         // alert('This email is in use, try another or logIn.');
       }
     });
@@ -46,16 +47,16 @@ export const shootIn = (email, password) => {
       // Signed in
       const user = userCredential.user;
       // alert('You are In!');
-      onNavigate('/home');
+      onNavigate("/home");
       // ...
     })
     .catch((error) => {
       const errorCode = error.code;
-      if (errorCode === 'auth/wrong-password') {
-        alert('Wrong password, try again.');
+      if (errorCode === "auth/wrong-password") {
+        alert("Wrong password, try again.");
       }
-      if (errorCode === 'auth/invalid-email') {
-        alert('write a valid email');
+      if (errorCode === "auth/invalid-email") {
+        alert("write a valid email");
       }
     });
 };
@@ -72,7 +73,7 @@ export const googleSignIn = () => {
       // The signed-in user info.
       const user = result.user;
       // ...
-      onNavigate('/home');
+      onNavigate("/home");
     })
     .catch((error) => {
       // Handle Errors here.
@@ -89,8 +90,9 @@ export const googleSignIn = () => {
 export const logOut = () => {
   signOut(auth)
     .then(() => {
-      onNavigate('/');
-    }).catch((error) => {
+      onNavigate("/");
+    })
+    .catch((error) => {
       alert(error);
     });
 };
