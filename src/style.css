@@ -8,7 +8,7 @@
 }
 
 @font-face {
-  font-family: 'arcade';
+  font-family: "arcade";
   src: url(./assets/ka1.ttf);
 }
 
@@ -77,7 +77,7 @@ body {
 }
 
 .titles {
-  font-family: 'arcade', Arial, Helvetica, sans-serif;
+  font-family: "arcade", Arial, Helvetica, sans-serif;
   line-height: 28px;
   font-size: 24px;
   justify-content: center;
@@ -95,16 +95,16 @@ body {
   margin: 10px 15px 10px 15px;
 }
 
- .pinkContainer{
-    width: 100%;
-    height: fit-content;
-    position: absolute;
-    text-align: center;
-  } 
+.pinkContainer {
+  width: 100%;
+  height: fit-content;
+  position: absolute;
+  text-align: center;
+}
 
 .sign {
   color: #f2a928;
-  height: auto;
+  height: 100%;
   font-size: 18px;
   font-family: "Roboto", sans-serif;
   width: 100%;
@@ -188,7 +188,6 @@ body {
   box-shadow: 0px 0px 5px 3px rgba(229, 135, 237, 0.75);
   border-radius: 10px;
   background-color: #c4c4c400;
-  margin-top: 20px;
   text-align: center;
   cursor: pointer;
   z-index: 1;
@@ -245,7 +244,7 @@ body {
   left: 0px;
   top: 0px;
   background: #632195;
-  border: 1px solid #E587ED;
+  border: 1px solid #e587ed;
   box-sizing: border-box;
   box-shadow: 0px 4px 8px #e587edbf;
 }
@@ -261,17 +260,17 @@ body {
   border: 2px solid #e587edbf;
   box-sizing: border-box;
   border-radius: 100%;
-  box-shadow: 0px 0px 5px 3px #e587edbf
+  box-shadow: 0px 0px 5px 3px #e587edbf;
 }
 
 .username {
   position: absolute;
-  font-family: 'arcade', Arial, Helvetica, sans-serif;
+  font-family: "arcade", Arial, Helvetica, sans-serif;
   line-height: 18px;
   font-size: 16px;
   margin-left: 30px;
   color: #28cef2;
-  text-shadow: 0px 0px 5px #E587ED;
+  text-shadow: 0px 0px 5px #e587ed;
   height: 50px;
   padding-top: 8px;
   width: fit-content;
@@ -298,7 +297,7 @@ body {
   height: fit-content;
   width: fit-content;
   margin-top: 100px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 20px;
   color: #ffffff;
   position: absolute;
@@ -332,10 +331,10 @@ body {
   border: 2px solid #e587edbf;
   box-sizing: border-box;
   border-radius: 100%;
-  box-shadow: 0px 0px 5px 3px #e587edbf
+  box-shadow: 0px 0px 5px 3px #e587edbf;
 }
 
-.sectionContainerPost>img {
+.sectionContainerPost > img {
   width: 3.5rem;
   height: 3.5rem;
   border: 2px solid #e587edbf;
@@ -349,7 +348,7 @@ body {
   margin-left: 10px;
 }
 
-.sectionContainerPost>button {
+.sectionContainerPost > button {
   grid-column: 2/3;
   grid-row: 3/4;
   justify-self: end;
@@ -413,7 +412,7 @@ body {
   grid-row: 2/4;
   width: 80%;
   height: fit-content;
-  color: #F3F3F3;
+  color: #f3f3f3;
   margin-left: 20px;
   margin-top: 10px;
 }
@@ -428,7 +427,7 @@ body {
   cursor: pointer;
 }
 
-.numberLikes{
+.numberLikes {
   width: 18px;
   height: 18px;
   border: none;
@@ -438,10 +437,10 @@ body {
   grid-row: 1/2;
   /* grid-column: 3/5;
   grid-row: 1/2; */
-  margin-left: 5px; 
+  margin-left: 5px;
   margin-top: 15px;
   text-align: center;
-  color:rgb(16, 235, 235);
+  color: rgb(16, 235, 235);
   text-shadow: 0px 0px 5px 1px #10ebc1;
 }
 
@@ -450,7 +449,7 @@ body {
   height: 20px;
   grid-column: 3/4;
   grid-row: 2/3;
-  margin-left: 6px; 
+  margin-left: 6px;
   margin-top: 14px;
   cursor: pointer;
 }
@@ -497,32 +496,32 @@ body {
   padding-left: 20px;
 }
 
-.newContainer{
+.newContainer {
   width: inherit;
   height: fit-content;
   display: flex;
   flex-direction: column;
-  grid-row:2/3 ;
-  grid-column:2/3 ;
+  grid-row: 2/3;
+  grid-column: 2/3;
   gap: 5px;
   padding-top: 8px;
   padding-left: 20px;
 }
 
-#inputNewValue{
-width: 180px;
-height: 20px;
-/* background: #210E36; */
-font-size: 14px;
-color: #e587ed;
+#inputNewValue {
+  width: 180px;
+  height: 20px;
+  /* background: #210E36; */
+  font-size: 14px;
+  color: #e587ed;
   background: #3f2959;
   border-radius: 4px;
 }
 
-#saveData{
-width: 100px;
-height: 20px;
-font-size: 14px;
+#saveData {
+  width: 100px;
+  height: 20px;
+  font-size: 14px;
   line-height: 16px;
   color: #10ebc1;
   text-shadow: 0px 0px 5px #10ebc1;
@@ -554,7 +553,7 @@ font-size: 14px;
   width: 17rem;
   height: 15rem;
   border: 1px solid #e587ed;
-  background: linear-gradient(180deg, #010409 -19.53%, #5B1E87 120.47%);
+  background: linear-gradient(180deg, #010409 -19.53%, #5b1e87 120.47%);
   border-radius: 25px;
   text-align: center;
   box-shadow: 0px 0px 8px #e587ed;
@@ -599,7 +598,7 @@ font-size: 14px;
   width: 17rem;
   height: 15rem;
   border: 1px solid #e587ed;
-  background: linear-gradient(180deg, #010409 -19.53%, #5B1E87 120.47%);
+  background: linear-gradient(180deg, #010409 -19.53%, #5b1e87 120.47%);
   border-radius: 25px;
   text-align: center;
   box-shadow: 0px 0px 8px #e587ed;
@@ -613,17 +612,17 @@ font-size: 14px;
   top: 5rem;
   width: 100%;
   height: fit-content;
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 
-#inputValueEdit{
+#inputValueEdit {
   position: absolute;
   top: 7rem;
   width: 200px;
   height: 30px;
   color: #808080;
   font-size: 16px;
-  background-color: #210E36;
+  background-color: #210e36;
   resize: none;
 }
 
@@ -632,7 +631,6 @@ font-size: 14px;
   position: relative;
   top: 10rem;
 }
-
 
 .footer {
   width: 100%;
@@ -652,7 +650,6 @@ font-size: 14px;
 }
 
 @media screen and (min-width: 620px) {
-  
   #root {
     display: flex;
     justify-content: center;
@@ -667,16 +664,16 @@ font-size: 14px;
     width: 80%;
     height: 80%;
     background: rgba(217, 30, 233, 0.3);
-    border: 8px solid #D91EE9;
+    border: 8px solid #d91ee9;
     box-shadow: 0px 0px 5px rgba(16, 235, 193, 0.75);
     border-radius: 45px;
   }
 
   .titles {
-  text-align: center;
-  margin-left: 0;
-  font-size: 40px;
-  margin-right: 70px;
+    text-align: center;
+    margin-left: 0;
+    font-size: 40px;
+    margin-right: 70px;
   }
 
   .meetArcade {
@@ -685,7 +682,7 @@ font-size: 14px;
   }
 
   .screenJoin {
-    background-image: url('assets/backgrounddesktop.png');
+    background-image: url("assets/backgrounddesktop.png");
     background-size: cover;
   }
 
@@ -697,9 +694,9 @@ font-size: 14px;
     height: 60px;
   }
   .btnsSign {
-    color: #10EBC1;
-    border: 3px solid #10EBC1;
-    box-shadow:  0px 5px 3px rgba(16, 235, 193, 0.75);
+    color: #10ebc1;
+    border: 3px solid #10ebc1;
+    box-shadow: 0px 5px 3px rgba(16, 235, 193, 0.75);
     background-color: #c4c4c400;
   }
 
@@ -708,9 +705,9 @@ font-size: 14px;
     height: 6rem;
     align-self: center;
     background: rgba(217, 30, 233, 0.4);
-    border: 2px solid #D91EE9;
+    border: 2px solid #d91ee9;
     box-sizing: border-box;
-    box-shadow: 0px 0px 8px #E587ED;
+    box-shadow: 0px 0px 8px #e587ed;
     border-radius: 10px;
   }
 
@@ -721,7 +718,7 @@ font-size: 14px;
     align-self: center;
     width: 75%;
     height: 50px;
-    background: #210E36;
+    background: #210e36;
     font-size: 20px;
   }
 
@@ -747,9 +744,9 @@ font-size: 14px;
     height: auto;
     margin: 1rem;
     background: rgba(217, 30, 233, 0.4);
-    border: 2px solid #D91EE9;
+    border: 2px solid #d91ee9;
     box-sizing: border-box;
-    box-shadow: 0px 0px 8px #E587ED;
+    box-shadow: 0px 0px 8px #e587ed;
     border-radius: 10px;
   }
 
@@ -765,7 +762,7 @@ font-size: 14px;
     margin-top: 30px;
   }
 
-  .sectionContainerPost>button {
+  .sectionContainerPost > button {
     position: relative;
     justify-self: end;
     bottom: 20px;
@@ -803,13 +800,13 @@ font-size: 14px;
     margin-bottom: 20px;
   }
 
-  .pinkContainer{
+  .pinkContainer {
     background: rgba(217, 30, 233, 0.3);
-    border: 8px solid #D91EE9;
+    border: 8px solid #d91ee9;
     box-shadow: 0px 0px 5px rgba(16, 235, 193, 0.75);
     border-radius: 60px;
     width: 40%;
     padding-top: 20px;
     padding-bottom: 20px;
-  } 
+  }
 }

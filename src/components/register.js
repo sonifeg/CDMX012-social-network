@@ -112,7 +112,7 @@ export const register = () => {
   labelHaveAcc.className = 'sign';
   labelHaveAcc.textContent = 'Have an account?';
 
-  const btnRefLogin = document.createElement('button');
+  const btnRefLogin = document.createElement('a');
   btnRefLogin.className = 'btnRefLogin';
   btnRefLogin.id = 'refLogin';
   btnRefLogin.textContent = 'Login';

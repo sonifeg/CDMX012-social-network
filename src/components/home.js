@@ -61,7 +61,7 @@ export const home = () => {
   // post feed
   const postFeed = document.createElement('section');
   postFeed.id = 'postFeed';
-  showPosts();
+  // showPosts();
 
   // Footer
   const footerMeet = document.createElement('footer');

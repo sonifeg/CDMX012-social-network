@@ -103,11 +103,11 @@ export const renderPost = (data, postId) => {
   return postFeedNews;
 };
 
-const postLikes = () => {
-  const likes = document.querySelectorAll('.like');
-  likes.forEach((like) => {
-    like.addEventListener('click', (e) => {
-      e.target;
-    });
-  });
-};
+// const postLikes = () => {
+//   const likes = document.querySelectorAll('.like');
+//   likes.forEach((like) => {
+//     like.addEventListener('click', (e) => {
+//       e.target;
+//     });
+//   });
+// };
